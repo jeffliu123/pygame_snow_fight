@@ -4,9 +4,9 @@ import cv2
 skier_images = ["skier_down.jpeg","skier_right1.jpeg","skier_right2.jpeg",
 "skier_left2.jpeg", "skier_left1.jpeg"]
 
-door = cv2.imread("boom.jpg")
-door = cv2.resize(door,(100,100))
-cv2.imwrite('boom.jpg', door)
+# door = cv2.imread("boom.jpg")
+# door = cv2.resize(door,(100,100))
+# cv2.imwrite('boom.jpg', door)
 
 
 class SkierClass(pygame.sprite.Sprite):
@@ -213,7 +213,7 @@ while True:
     if map_position >=640 and activeMap ==0:
         activeMap = 1
         if door_flag == True:
-            if fight_flag == True:
+            if fight_flag == True and door_flag == True:
                 map0 = create_map_fight(20,29)
             else:    
                 map0 = create_map_door(20,29)
@@ -226,7 +226,7 @@ while True:
             ob.location[1] = ob.location[1]-1280 
         map_position = map_position - 1280
         if door_flag == True:
-            if fight_flag == True:
+            if fight_flag == True and door_flag == True:
                 map1 = create_map_fight(10,19)
             else:    
                 map1 = create_map_door(10,19)
